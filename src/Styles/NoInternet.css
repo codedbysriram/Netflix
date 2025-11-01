@@ -1,0 +1,171 @@
+.no-internet {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #000000 40%, #1a1a1a 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ✨ Logo Animation */
+.no-net-logo {
+  width: 120px;
+  animation: glow 2s ease-in-out infinite alternate, float 3s ease-in-out infinite;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 10px red);
+}
+
+/* 📡 Wi-Fi Animation */
+.wifi-animation {
+  position: relative;
+  margin-top: 10px;
+}
+
+.wifi-icon {
+  color: #ff0000;
+  z-index: 2;
+  filter: drop-shadow(0 0 8px #ff0000);
+}
+
+.wifi-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #ff0000;
+  opacity: 0.5;
+  animation: pulse 1.8s infinite ease-out;
+}
+
+.wifi-pulse.second {
+  animation-delay: 0.6s;
+  opacity: 0.3;
+}
+
+/* 🔥 Title & Text Animations */
+.no-net-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff0000;
+  text-shadow: 0 0 15px #ff0000aa;
+}
+
+.no-net-msg {
+  color: #ccc;
+  max-width: 500px;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease;
+}
+
+/* 🔁 Button */
+.retry-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  animation: fadeIn 1.2s ease;
+}
+
+.retry-btn:hover {
+  background: #ff0a16;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.small-hint {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* 🌟 Animations */
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 10px #ff0000);
+  }
+  to {
+    filter: drop-shadow(0 0 25px #ff0000);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+/* ✨ Helper Animation Classes */
+.fade-in { animation: fadeIn 1s ease-in; }
+.flicker { animation: flicker 3s infinite; }
+.flicker-soft { animation: flicker 6s infinite; }
+.bounce { animation: float 2.5s ease-in-out infinite; }
+.pulse { animation: glow 1.5s ease-in-out infinite alternate; }

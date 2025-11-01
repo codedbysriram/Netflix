@@ -1,0 +1,96 @@
+/* =========================
+   🔍 Search Results Page
+   ========================= */
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.result-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.result-card img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+  transform: scale(1.05);
+}
+
+.no-results {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .search-results {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.9rem;
+    padding: 1.8rem;
+  }
+}
+
+/* Mobile Large (≤768px) */
+@media (max-width: 768px) {
+  .search-results {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+    padding: 1.5rem;
+  }
+
+  .result-card img {
+    border-radius: 6px;
+  }
+
+  .no-results {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Small (≤480px) */
+@media (max-width: 480px) {
+  .search-results {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.6rem;
+    padding: 1rem;
+  }
+
+  .result-card img {
+    border-radius: 5px;
+  }
+
+  .no-results {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra Small Phones (≤360px) */
+@media (max-width: 360px) {
+  .search-results {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .result-card img {
+    border-radius: 4px;
+  }
+
+  .no-results {
+    font-size: 0.9rem;
+  }
+}

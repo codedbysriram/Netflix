@@ -1,0 +1,167 @@
+/* 🎬 Netflix-Style Movie Grid */
+.movies-grid-container {
+  margin-top: 100px;
+  padding: 0 60px;
+  color: white;
+  background-color: #000;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Grid Layout */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Movie Card */
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #141414;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+/* Smooth Zoom (Netflix feel) */
+.movie-card:hover {
+  transform: scale(1.08) translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85);
+  z-index: 5;
+}
+
+/* Poster Image */
+.movie-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* Image subtle zoom inside card */
+.movie-card:hover img {
+  transform: scale(1.15);
+  filter: brightness(0.85);
+}
+
+/* Overlay for Info */
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 75%);
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  text-align: center;
+}
+
+/* Text appears on hover */
+.movie-card:hover .movie-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.movie-info p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Optional Play Button */
+.play-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  background: #f40612;
+  transform: scale(1.05);
+}
+
+/* Subtle fade-in animation on load */
+.movie-card {
+  animation: fadeIn 0.7s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hide old extra hover effects */
+.movie-item:hover img,
+.movie-item:hover::before {
+  transform: none;
+  filter: none;
+  backdrop-filter: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .movie-card img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-grid-container {
+    padding: 0 25px;
+  }
+  .movie-grid {
+    gap: 18px;
+  }
+  .movie-card img {
+    height: 240px;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card img {
+    height: 200px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

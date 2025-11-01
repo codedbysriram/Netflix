@@ -1,0 +1,143 @@
+ .row {
+  color: white;
+  margin: 30px 0;
+  position: relative;
+}
+
+.row-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 10px 40px;
+}
+
+/* container wrapping posters + buttons */
+.row-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* scrollable movie list */
+.row-posters {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* movie card reuse your Netflix hover style */
+.movie-card {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 230px;
+  max-width: 230px;
+  margin: 0 5px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #141414;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center center;
+  z-index: 0;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65),
+              0 6px 18px rgba(229, 9, 20, 0.15);
+  z-index: 5;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.movie-card:hover img {
+  transform: scale(1.02);
+  filter: brightness(0.9);
+}
+
+/* overlay title */
+.movie-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 70%);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 🎯 Scroll Buttons — Netflix-style */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(20, 20, 20, 0.5);
+  color: white;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 12px;
+  height: 80px;
+  width: 50px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* left and right button placement */
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* show arrows when hovering row */
+.row-container:hover .scroll-btn {
+  opacity: 1;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(229, 9, 20, 0.85);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .movie-card {
+    min-width: 160px;
+    max-width: 160px;
+  }
+
+  .movie-card img {
+    height: 240px;
+  }
+
+  .scroll-btn {
+    font-size: 1.8rem;
+    width: 40px;
+    height: 60px;
+  }
+}

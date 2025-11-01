@@ -1,0 +1,119 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #000 60%, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.netflix-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: appear 1s ease-in-out;
+}
+
+.netflix-n {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔴 Base bars */
+.bar {
+  position: absolute;
+  width: 25px;
+  height: 100%;
+  border-radius: 4px;
+  opacity: 0;
+  background: linear-gradient(180deg, #e50914, #b20710);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+  transform-origin: bottom;
+}
+
+/* Left bar */
+.bar.left {
+  left: 0;
+  transform: skewY(15deg);
+  animation: barIn 0.6s ease-out forwards 0.1s;
+}
+
+/* Middle diagonal */
+.bar.middle {
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff0a16, #b20710);
+  clip-path: polygon(50% 0%, 100% 0, 50% 100%, 0% 100%);
+  transform: skewY(-15deg);
+  animation: barIn 0.6s ease-out forwards 0.5s;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Right bar */
+.bar.right {
+  right: 0;
+  transform: skewY(-15deg);
+  animation: barIn 0.6s ease-out forwards 0.9s;
+}
+
+/* Text */
+.loading-text {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeText 2s infinite 1.2s;
+}
+
+/* ✨ Keyframes */
+@keyframes barIn {
+  0% {
+    transform: scaleY(0.1);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeText {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

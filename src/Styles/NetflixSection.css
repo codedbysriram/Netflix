@@ -1,0 +1,175 @@
+/* =========================
+   🎬 Netflix-Style Row Section
+   ========================= */
+
+.netflix-section {
+  color: #fff;
+  margin-top: -60px;
+  padding: 0 4%;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* 🎞️ Scrollable Movie Row */
+.movie-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🎥 Movie Card */
+.movie-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.movie-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 🔄 Scroll Button Visibility */
+.scroll-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.row-scroll-container:hover .scroll-btn {
+  opacity: 1;
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* 📺 Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .movie-card {
+    width: 170px;
+    height: 260px;
+  }
+
+  .movie-name {
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Mobile (≤768px) */
+@media (max-width: 768px) {
+  .netflix-section {
+    margin-top: -40px;
+    padding: 0 3%;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .movie-row {
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  .movie-card {
+    width: 150px;
+    height: 220px;
+  }
+
+  .movie-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .netflix-section {
+    margin-top: -30px;
+    padding: 0 2%;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    text-align: left;
+    padding-left: 8px;
+  }
+
+  .movie-row {
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+
+  .movie-card {
+    width: 120px;
+    height: 180px;
+  }
+
+  .movie-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* 📱 Extra Small Phones (≤360px) */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .movie-card {
+    width: 100px;
+    height: 150px;
+  }
+
+  .movie-name {
+    font-size: 0.75rem;
+  }
+}

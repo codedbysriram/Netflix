@@ -1,0 +1,374 @@
+/* 🌌 GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* 🎬 NAVBAR */
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e50914;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+}
+
+.logout-btn,
+.signin-btn,
+.start-btn {
+  background: #e50914;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.logout-btn:hover,
+.signin-btn:hover,
+.start-btn:hover {
+  background: #ff0a16;
+  transform: scale(1.05);
+}
+
+/* 🎥 HERO SECTION */
+.hero {
+  height: 70vh;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/19aefb8d-7b21-4e06-a8de-255f514c68f7/1b57c637-330a-4d22-b530-056934bd41ff/IN-en-20221024-popsignuptwoweeks-perspective_alpha_website_small.jpg")
+    center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+/* ✉️ EMAIL INPUT */
+.hero-content input[type="email"] {
+  padding: 12px 15px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+/* 🎥 MOVIE GRID SECTION */
+.movies {
+  padding: 40px 50px;
+  background-color: #141414;
+}
+
+.movies h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #e50914;
+  padding-left: 10px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.movie-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+}
+
+/* 🔐 LOGIN & REGISTER FORMS */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #000, #141414, #1c1c1c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth-form {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+  width: 320px;
+  text-align: center;
+}
+
+.auth-form h2 {
+  color: #e50914;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #222;
+  color: white;
+}
+
+.auth-form button {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #ff0a16;
+  transform: scale(1.05);
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+/* 🔐 Auth form styles */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(180deg, #000000, #141414);
+}
+
+.auth-form {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.auth-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #e50914;
+}
+
+.auth-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #f40612;
+}
+
+.auth-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.auth-switch {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.auth-switch a {
+  color: #e50914;
+  text-decoration: none;
+}
+.mylist-section {
+  padding: 30px 40px;
+  color: white;
+}
+
+.movie-row {
+  display: flex;
+  overflow-x: scroll;
+  gap: 15px;
+}
+
+.movie-item {
+  position: relative;
+}
+
+.movie-poster {
+  width: 160px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+  transform: scale(1.1);
+}
+
+.movie-item button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.movie-item button:hover {
+  background: #e50914;
+}
+body {
+  background-color: #141414;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+/* Base styles for desktop */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .navbar, .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card {
+    width: 90%;
+    margin: auto;
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.login-box {
+  width: 100%;          /* Makes it fill the screen on mobile */
+  max-width: 400px;     /* But limits it to 400px on large screens */
+  margin: 2rem auto;    /* Centers the box */
+  padding: 2rem;
+  background: rgba(0,0,0,0.8);
+  border-radius: 12px;
+}

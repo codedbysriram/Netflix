@@ -1,0 +1,206 @@
+/* =========================
+   🌑 Netflix-style My List Page
+   ========================= */
+
+.page-container {
+  background-color: #141414;
+  color: #fff;
+  min-height: 100vh;
+  padding: 100px 50px;
+}
+
+.page-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #e5e5e5;
+  letter-spacing: 1px;
+}
+
+/* My List Grid */
+.mylist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Movie Item Card */
+.mylist-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mylist-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.mylist-item:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.mylist-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+/* Movie Title Overlay */
+.mylist-item h4 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.mylist-item:hover h4 {
+  opacity: 1;
+}
+
+/* Empty list message */
+.empty-list {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 80px;
+}
+
+/* Remove Button */
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 0, 0, 0.8);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.mylist-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background: red;
+  transform: scale(1.1);
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 80px 30px;
+  }
+
+  .page-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .mylist-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Mobile Large (≤768px) */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 80px 20px;
+  }
+
+  .page-container h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .mylist-container {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 18px;
+  }
+
+  .mylist-item h4 {
+    font-size: 0.9rem;
+  }
+
+  .remove-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Small (≤480px) */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 70px 15px;
+  }
+
+  .page-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .mylist-container {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+  }
+
+  .mylist-item {
+    width: 100%;
+  }
+
+  .mylist-item img {
+    border-radius: 6px;
+  }
+
+  .mylist-item h4 {
+    font-size: 0.85rem;
+  }
+
+  .remove-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Phones (≤360px) */
+@media (max-width: 360px) {
+  .page-container {
+    padding: 60px 10px;
+  }
+
+  .page-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .mylist-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .mylist-item h4 {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,62 @@
+/* src/Styles/Footer.css */
+
+.netflix-footer {
+  background-color: #141414;
+  color: #757575;
+  padding: 50px 10%;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid #222;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-top p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.footer-top a {
+  color: #757575;
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #757575;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.dev-name {
+  color: #e50914;
+  font-weight: 600;
+}

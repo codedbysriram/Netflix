@@ -1,0 +1,203 @@
+/* =========================
+   🎥 New & Popular Section
+   ========================= */
+
+.newpopular-container {
+  padding: 20px 40px;
+  color: white;
+  background-color: #000;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.popular-card {
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.popular-card:hover {
+  transform: scale(1.05);
+}
+
+.popular-poster {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.movie-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+/* 🎬 Buttons like Netflix */
+.movie-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+/* 🔴 Play Button */
+.play-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+.play-btn:hover {
+  background-color: #f40612;
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(229, 9, 20, 0.6);
+}
+
+/* ➕ My List Button */
+.list-btn {
+  background-color: rgba(109, 109, 110, 0.8);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.list-btn:hover {
+  background-color: #e50914;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+}
+
+/* ✅ Added to My List */
+.list-btn.added {
+  background-color: #333;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.list-btn.added:hover {
+  background-color: #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .newpopular-container {
+    padding: 20px 30px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .movie-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Large (≤768px) */
+@media (max-width: 768px) {
+  .newpopular-container {
+    padding: 15px 20px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+  }
+
+  .movie-title {
+    font-size: 0.9rem;
+  }
+
+  .play-btn,
+  .list-btn {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Small (≤480px) */
+@media (max-width: 480px) {
+  .newpopular-container {
+    padding: 10px 15px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .movie-title {
+    font-size: 0.8rem;
+  }
+
+  .play-btn,
+  .list-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Phones (≤360px) */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .play-btn,
+  .list-btn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+}
