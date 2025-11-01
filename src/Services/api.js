@@ -1,48 +1,23 @@
-// src/Services/api.js
+import axios from "axios";
 
-// ✅ Your deployed backend base URL
-const API_URL = "https://backend-0a29.onrender.com";
+const API = "https://backend-0a29.onrender.com";
 
-// 🔐 Register user
-export const registerUser = async (email, password) => {
+export const registerUser = async (userData) => {
   try {
-    const response = await fetch(`${API_URL}/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (err) {
-    console.error("❌ Register error:", err);
-    return { message: "Server error. Please try again later." };
+    const response = await axios.post(`${API}/register`, userData);
+    return response.data;
+  } catch (error) {
+    console.error("Register error:", error.response?.data || error.message);
+    throw error;
   }
 };
 
-// 🔓 Login user
-export const loginUser = async (email, password) => {
+export const loginUser = async (userData) => {
   try {
-    const response = await fetch(`${API_URL}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (err) {
-    console.error("❌ Login error:", err);
-    return { message: "Server error. Please try again later." };
+    const response = await axios.post(`${API}/login`, userData);
+    return response.data;
+  } catch (error) {
+    console.error("Login error:", error.response?.data || error.message);
+    throw error;
   }
 };
