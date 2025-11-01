@@ -1,5 +1,5 @@
 import React from "react";
-import introVideoSrc from "../assets/NETFLIX_intro.mp4"; // renamed variable
+import IntroVideo from "../assets/NETFLIX_intro.mp4";
 import "../Styles/IntroVideo.css";
 
 export default function IntroVideo({ onFinish }) {

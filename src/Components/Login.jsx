@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { loginUser } from "../Services/api";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
-import IntroVideo from "./IntroVideo"; // ✅ now imports component, not .mp4
+import IntroVideo from "../assets/NETFLIX_intro.mp4";
+ // ✅ now imports component, not .mp4
 import "../App.css";
 
 export default function Login() {
