@@ -3,7 +3,7 @@ import "../Styles/IntroVideo.css";
 import IntroVideo from "../assets/NETFLIX_intro.mp4";
 
 
-export default function IntroVideo({ onFinish }) {
+export default function Intro({ onFinish }) {
   const videoRef = useRef(null);
 
   useEffect(() => {

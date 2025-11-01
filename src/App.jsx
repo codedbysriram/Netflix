@@ -9,18 +9,18 @@ import {
 } from "react-router-dom";
 
 // 🔹 Components
-import Banner from "./Components/Banner/Banner";
+import Banner from "./Components/Banner";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Movies from "./Pages/Movies";
 import ProtectedRoute from "./Components/ProtectedRoute";
-import MyList from "./Pages/MyList/";
+import MyList from "./Pages/MyList";
 import TvShows from "./Pages/TvShows";
 import Home from "./Pages/Home";
 import NewPopular from "./Pages/NewPopular";
-import Loader from "./Components/Loader/";
+import Loader from "./Components/Loader";
 import NoInternet from "./Components/NoInternet";
 
 import "./App.css";
