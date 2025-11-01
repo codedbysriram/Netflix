@@ -1,30 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import introVideoSrc from "../assets/NETFLIX_intro.mp4"; // renamed variable
 import "../Styles/IntroVideo.css";
-import IntroVideo from "../assets/NETFLIX_intro.mp4";
 
-
-export default function Intro({ onFinish }) {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch((err) => {
-        console.warn("Autoplay blocked or failed:", err);
-      });
-    }
-  }, []);
-
+export default function IntroVideo({ onFinish }) {
   return (
-    <div className="intro-video-overlay">
-      <video
-        ref={videoRef}
-        className="intro-video"
-        src={videoFile}
-        autoPlay
-        playsInline
-        onEnded={onFinish}
-      />
-    </div>
+    <video
+      className="intro-video"
+      autoPlay
+      muted
+      onEnded={onFinish}
+      src={introVideoSrc}
+    />
   );
 }
