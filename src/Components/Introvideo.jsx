@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../Styles/IntroVideo.css";
-import videoFile from "../assets/netflix_intro.mp4"; // ✅ updated path
+import IntroVideo from "../assets/NETFLIX_intro.mp4";
+
 
 export default function IntroVideo({ onFinish }) {
   const videoRef = useRef(null);
