@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { loginUser } from "../Services/api";
 import { useNavigate } from "react-router-dom";
-import Loader from "./Loader";
-import IntroVideo from "./IntroVideo"; // ✅ now imports component, not .mp4
+import Loader from "../Components/Loader/Loader";
+import IntroVideo from "../Components/IntroVideo/IntroVideo"; // ✅ now imports component, not .mp4
 import "../App.css";
 
 export default function Login() {

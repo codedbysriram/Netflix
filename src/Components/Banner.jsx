@@ -1,6 +1,6 @@
 import axios from "axios";
 import "../Styles/Banner.css";
-import Loader from "./Loader"; // 👈 import loader
+import Loader from "../Components/Loader/Loader"; // 👈 import loader
 import React, { useState, useEffect, useRef } from "react";
 
 export default function Banner() {
