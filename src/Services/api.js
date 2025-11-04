@@ -1,8 +1,8 @@
 // 📁 src/Services/api.js
 import axios from "axios";
 
-// 🟢 Use your Render backend URL here:
-const API = "https://backend-v1pu.vercel.app/"; // example: https://netflix-backend-xyz.onrender.com
+// ✅ Correct backend URL (no trailing slash)
+const API = "https://backend-v1pu.vercel.app";
 
 export const registerUser = async (userData) => {
   try {
