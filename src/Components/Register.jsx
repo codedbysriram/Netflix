@@ -18,10 +18,10 @@ export default function Register() {
     setMessage("");
 
     try {
-      const res = await registerUser(email, password);
+      const res = await registerUser({ email, password });
 
       if (res.message.includes("success")) {
-    
+        setMessage("✅ Registered Successfully!");
         setTimeout(() => navigate("/login"), 1500);
       } else {
         setMessage("❌ " + (res.message || "Registration failed"));
