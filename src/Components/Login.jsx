@@ -3,7 +3,6 @@ import { loginUser } from "../Services/api";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import IntroVideo from "../assets/NETFLIX_intro.mp4";
- // ✅ now imports component, not .mp4
 import "../App.css";
 
 export default function Login() {
@@ -21,12 +20,13 @@ export default function Login() {
     setMessage("");
 
     try {
-      const res = await loginUser(email, password);
+      // ✅ Fixed: send email + password as an object
+      const res = await loginUser({ email, password });
 
       if (res.token) {
         localStorage.setItem("token", res.token);
 
-        // Show loader briefly before intro
+        // Show loader briefly before showing intro video
         setTimeout(() => {
           setLoading(false);
           setShowIntro(true);
@@ -42,9 +42,17 @@ export default function Login() {
     }
   };
 
-  // Show intro video and redirect after it ends
+  // ✅ Show intro video before redirecting to home
   if (showIntro) {
-    return <IntroVideo onFinish={() => navigate("/home")} />;
+    return (
+      <video
+        src={IntroVideo}
+        autoPlay
+        muted
+        onEnded={() => navigate("/home")}
+        className="intro-video"
+      />
+    );
   }
 
   return (
