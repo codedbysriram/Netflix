@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // ✅ Correct backend URL (no trailing slash)
-const API = "backend-3o4v3i2gt-codedbysrirams-projects.vercel.app";
+const API = "https://backend-0a29.onrender.com";
 
 export const registerUser = async (userData) => {
   try {
